@@ -5,9 +5,6 @@ import lombok.*;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-/**
- * The persistent class for the COUNTRIES database table.
- */
 @Entity
 @Table(
     name = "PRICES"
@@ -18,9 +15,6 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class Price {
-
-//  @EmbeddedId
-//  private PricePK id;
 
   @Id
   @Column(name = "PRICE_LIST", nullable = false)
