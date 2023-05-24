@@ -24,9 +24,6 @@ class PriceControllerTest {
   @Autowired
   private MockMvc mockMvc;
 
-  @Autowired
-  private PricesRepository repository;
-
   @Test
   void getPrice() throws Exception {
 
