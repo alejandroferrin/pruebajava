@@ -24,15 +24,12 @@ public class PriceServiceImpl implements PriceService {
   @Override
   public Optional<PriceResponseDTO> findPrice(LocalDateTime date, Integer productId, Long brandId) {
 
-    Optional<PriceResponseDTO> first = repository
+    return repository
         .findByStartDateLessThanEqualAndEndDateGreaterThanAndProductIdAndBrand_IdOrderByPriorityDesc(
             date, date, productId, brandId).stream()
         .map(price ->
             converter.toDto(price))
         .findFirst();
-    if(first.isPresent())
-      System.out.println(first.get());
-    return first;
   }
 
 }
